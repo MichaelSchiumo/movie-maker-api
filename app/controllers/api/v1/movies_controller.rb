@@ -9,6 +9,11 @@ class Api::V1::MoviesController < ApplicationController
     end
   end
 
+  def index 
+    @movies = Movie.all
+    render json: @movies, except: [:created_at, :updated_at], status: 200
+  end
+
 
   private 
 

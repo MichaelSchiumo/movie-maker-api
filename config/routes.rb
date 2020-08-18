@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     namespace :v1 do 
       resources :users, only: [:create, :destroy]
       resources :sessions
-      resources :movies, only: [:create]
+      resources :movies, only: [:create, :index]
+
+      get '/movies' => 'movies#index'
 
       post '/signup' => 'users#create'
 
