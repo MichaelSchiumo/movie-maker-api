@@ -6,8 +6,11 @@ Rails.application.routes.draw do
       resources :users, only: [:create, :destroy]
       resources :sessions
       resources :movies, only: [:create, :index]
+      resources :reviews, only: [:create]
 
       get '/movies' => 'movies#index'
+
+      get '/movie_reviews/:id' => 'reviews#movie_reviews'
 
       post '/signup' => 'users#create'
 
