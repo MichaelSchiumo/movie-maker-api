@@ -9,4 +9,9 @@ class Api::V1::SessionsController < ApplicationController
       render json: { errors: ['Unable to login.'] }, status: 400
     end
   end
+
+  def destroy 
+    session.clear
+  end
+
 end
